@@ -1,54 +1,57 @@
 package database;
 
+import model.CoffeeBeansResource;
+import model.MilkResource;
+import model.WaterResource;
+
 import java.util.Objects;
 
 public class Resources {
     //Хранит ресурсы кофемашины
-    private double totalMilkAmount;
-    private double totalWaterAmount;
-    private double totalCoffeeBeansAmount;
+    private final MilkResource totalMilkAmount = new MilkResource();
+    private final WaterResource totalWaterAmount = new WaterResource();
+    private final CoffeeBeansResource totalCoffeeBeansAmount = new CoffeeBeansResource();
 
     public Resources() {
     }
 
     public Resources(double totalMilkAmount, double totalWaterAmount, double totalCoffeeBeansAmount) {
-        this();
         setTotalMilkAmount(totalMilkAmount);
         setTotalWaterAmount(totalWaterAmount);
         setTotalCoffeeBeansAmount(totalCoffeeBeansAmount);
     }
 
     public double getTotalMilkAmount() {
-        return totalMilkAmount;
+        return totalMilkAmount.getTotalResourceAmount();
     }
 
     public void setTotalMilkAmount(double totalMilkAmount) {
-        validate(totalMilkAmount);
-        this.totalMilkAmount = totalMilkAmount;
+        this.totalMilkAmount.setTotalResourceAmount(totalMilkAmount);
     }
 
     public double getTotalWaterAmount() {
-        return totalWaterAmount;
+        return totalWaterAmount.getTotalResourceAmount();
     }
 
     public void setTotalWaterAmount(double totalWaterAmount) {
-        validate(totalWaterAmount);
-        this.totalWaterAmount = totalWaterAmount;
+        this.totalWaterAmount.setTotalResourceAmount(totalWaterAmount);
     }
 
     public double getTotalCoffeeBeansAmount() {
-        return totalCoffeeBeansAmount;
+        return totalCoffeeBeansAmount.getTotalResourceAmount();
     }
 
     public void setTotalCoffeeBeansAmount(double totalCoffeeBeansAmount) {
-        validate(totalCoffeeBeansAmount);
-        this.totalCoffeeBeansAmount = totalCoffeeBeansAmount;
+        this.totalCoffeeBeansAmount.setTotalResourceAmount(totalCoffeeBeansAmount);
     }
 
-    private void validate(double resourceAmount) {
-        if (resourceAmount < 0) {
-            throw new IllegalArgumentException("Error: Invalid amount of resource\n");
-        }
+    @Override
+    public String toString() {
+        return "Resources:\n" +
+                "totalMilkAmount=" + totalMilkAmount +
+                "\ntotalWaterAmount=" + totalWaterAmount +
+                "\ntotalCoffeeBeansAmount=" + totalCoffeeBeansAmount +
+                '\n';
     }
 
     @Override
@@ -56,7 +59,7 @@ public class Resources {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Resources resources = (Resources) o;
-        return Double.compare(resources.totalMilkAmount, totalMilkAmount) == 0 && Double.compare(resources.totalWaterAmount, totalWaterAmount) == 0 && Double.compare(resources.totalCoffeeBeansAmount, totalCoffeeBeansAmount) == 0;
+        return Objects.equals(totalMilkAmount, resources.totalMilkAmount) && Objects.equals(totalWaterAmount, resources.totalWaterAmount) && Objects.equals(totalCoffeeBeansAmount, resources.totalCoffeeBeansAmount);
     }
 
     @Override

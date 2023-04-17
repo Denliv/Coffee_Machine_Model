@@ -9,25 +9,29 @@ public class Recipes {
     private final Map<String, CoffeeRecipe> recipes = new HashMap<>();
 
     public void insert(CoffeeRecipe newRecipe) {
-        recipes.put(newRecipe.getRecipeName(), newRecipe);
+        recipes.put(newRecipe.getRecipeName().toUpperCase(), newRecipe);
     }
 
     public void delete(String recipeName) {
-        if (!recipes.containsKey(recipeName)) {
-            throw new IllegalArgumentException("Error: Can not delete coffee recipe as there is no such recipe in the database");
+        if (!recipes.containsKey(recipeName.toUpperCase())) {
+            throw new IllegalArgumentException("Error: Can not delete coffee recipe as there is no such recipe in the database\n");
         }
-        recipes.remove(recipeName, recipes.get(recipeName));
+        recipes.remove(recipeName.toUpperCase(), recipes.get(recipeName.toUpperCase()));
     }
 
     public boolean contains(String recipeName) {
-        return recipes.containsKey(recipeName);
+        return recipes.containsKey(recipeName.toUpperCase());
     }
 
     public CoffeeRecipe get(String recipeName) {
-        if (!recipes.containsKey(recipeName)) {
-            throw new IllegalArgumentException("Error: Can not get coffee recipe as there is no such recipe in the database");
+        if (!recipes.containsKey(recipeName.toUpperCase())) {
+            throw new IllegalArgumentException("Error: Can not get coffee recipe as there is no such recipe in the database\n");
         }
-        return recipes.get(recipeName);
+        return recipes.get(recipeName.toUpperCase());
+    }
+
+    public void clear() {
+        recipes.clear();
     }
 
     @Override

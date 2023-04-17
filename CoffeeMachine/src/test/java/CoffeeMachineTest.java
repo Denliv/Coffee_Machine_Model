@@ -1,13 +1,15 @@
 import database.Resources;
 import model.Coffee;
 import model.CoffeeRecipe;
+import model.WaterResource;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class CoffeeMachineTest {
-    CoffeeMachine coffeeMachine;
+    ICoffeeMachine coffeeMachine;
+
     @Before
     public void begin() {
         Resources coffeeMachineResources = new Resources(10, 10, 10);
@@ -37,6 +39,11 @@ public class CoffeeMachineTest {
     }
 
     @Test
+    public void coffeeRecipeOperationsTest() {
+
+    }
+
+    @Test
     public void coffeeRecipeErrorTest() {
         assertThrows(IllegalArgumentException.class, () -> coffeeMachine.makeCoffee("CoffeeSample1"));
         CoffeeRecipe latte = new CoffeeRecipe("Latte", 2, 1, 3);
@@ -54,10 +61,5 @@ public class CoffeeMachineTest {
         coffeeMachine.makeCoffee("Latte");
         coffeeMachine.makeCoffee("Latte");
         assertThrows(IllegalArgumentException.class, () -> coffeeMachine.makeCoffee("Latte"));
-    }
-
-    @Test
-    public void deleteCoffeeRecipeTest() {
-
     }
 }

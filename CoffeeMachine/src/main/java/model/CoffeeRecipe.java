@@ -5,9 +5,9 @@ import java.util.Objects;
 public class CoffeeRecipe {
     //Класс модели "Рецепт Кофе"
     private String recipeName;
-    private double milkAmount;
-    private double waterAmount;
-    private double coffeeBeansAmount;
+    private MilkResource milkAmount;
+    private WaterResource waterAmount;
+    private CoffeeBeansResource coffeeBeansAmount;
 
     public CoffeeRecipe(String recipeName, double milkAmount, double waterAmount, double coffeeBeansAmount) {
         setRecipeName(recipeName);
@@ -28,30 +28,27 @@ public class CoffeeRecipe {
     }
 
     public double getMilkAmount() {
-        return milkAmount;
+        return milkAmount.getTotalResourceAmount();
     }
 
     private void setMilkAmount(double milkAmount) {
-        validate(milkAmount);
-        this.milkAmount = milkAmount;
+        this.milkAmount = new MilkResource(milkAmount);
     }
 
     public double getWaterAmount() {
-        return waterAmount;
+        return waterAmount.getTotalResourceAmount();
     }
 
     private void setWaterAmount(double waterAmount) {
-        validate(waterAmount);
-        this.waterAmount = waterAmount;
+        this.waterAmount = new WaterResource(waterAmount);
     }
 
     public double getCoffeeBeansAmount() {
-        return coffeeBeansAmount;
+        return coffeeBeansAmount.getTotalResourceAmount();
     }
 
     private void setCoffeeBeansAmount(double coffeeBeansAmount) {
-        validate(coffeeBeansAmount);
-        this.coffeeBeansAmount = coffeeBeansAmount;
+        this.coffeeBeansAmount = new CoffeeBeansResource(coffeeBeansAmount);
     }
 
     private void validate(double resourceAmount) {
@@ -74,11 +71,11 @@ public class CoffeeRecipe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CoffeeRecipe that = (CoffeeRecipe) o;
-        return Double.compare(that.milkAmount, milkAmount) == 0 && Double.compare(that.waterAmount, waterAmount) == 0 && Double.compare(that.coffeeBeansAmount, coffeeBeansAmount) == 0;
+        return Objects.equals(recipeName, that.recipeName) && Objects.equals(milkAmount, that.milkAmount) && Objects.equals(waterAmount, that.waterAmount) && Objects.equals(coffeeBeansAmount, that.coffeeBeansAmount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(milkAmount, waterAmount, coffeeBeansAmount);
+        return Objects.hash(recipeName, milkAmount, waterAmount, coffeeBeansAmount);
     }
 }

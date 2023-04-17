@@ -48,4 +48,8 @@ public class CoffeeMachineService {
     public static void deleteCoffeeRecipe(Recipes recipesDataBase, String recipeName) {
         recipesDataBase.delete(recipeName);
     }
+
+    public static void resetRecipesDataBase(Recipes recipesDataBase) {
+        recipesDataBase.clear();
+    }
 }
