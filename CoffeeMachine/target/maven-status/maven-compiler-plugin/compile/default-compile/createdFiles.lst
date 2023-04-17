@@ -1,0 +1,11 @@
+database\Recipes.class
+model\Resource.class
+coffeemachine\CoffeeMachine.class
+model\WaterResource.class
+database\Resources.class
+model\CoffeeBeansResource.class
+interfaces\ICoffeeMachine.class
+model\CoffeeRecipe.class
+model\MilkResource.class
+model\Coffee.class
+service\CoffeeMachineService.class
