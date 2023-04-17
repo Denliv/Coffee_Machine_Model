@@ -1,7 +1,8 @@
+import coffeemachine.CoffeeMachine;
+import interfaces.ICoffeeMachine;
 import database.Resources;
 import model.Coffee;
 import model.CoffeeRecipe;
-import model.WaterResource;
 import org.junit.Before;
 import org.junit.Test;
 

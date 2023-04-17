@@ -51,9 +51,9 @@ public class Resources {
     @Override
     public String toString() {
         return "Resources:\n" +
-                "totalMilkAmount=" + totalMilkAmount +
-                "\ntotalWaterAmount=" + totalWaterAmount +
-                "\ntotalCoffeeBeansAmount=" + totalCoffeeBeansAmount +
+                "totalMilkAmount=" + totalMilkAmount.getTotalResourceAmount() +
+                "\ntotalWaterAmount=" + totalWaterAmount.getTotalResourceAmount() +
+                "\ntotalCoffeeBeansAmount=" + totalCoffeeBeansAmount.getTotalResourceAmount() +
                 '\n';
     }
 

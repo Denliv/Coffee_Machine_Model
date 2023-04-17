@@ -1,3 +1,5 @@
+package interfaces;
+
 import database.Recipes;
 import database.Resources;
 import model.Coffee;

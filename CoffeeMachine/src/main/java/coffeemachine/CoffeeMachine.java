@@ -1,5 +1,8 @@
+package coffeemachine;
+
 import database.Recipes;
 import database.Resources;
+import interfaces.ICoffeeMachine;
 import model.Coffee;
 import model.CoffeeRecipe;
 import service.CoffeeMachineService;

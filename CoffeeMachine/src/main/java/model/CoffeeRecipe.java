@@ -24,7 +24,7 @@ public class CoffeeRecipe {
         if (recipeName == null || recipeName.equals("")) {
             throw new IllegalArgumentException("Error: Invalid name of the recipe\n");
         }
-        this.recipeName = recipeName;
+        this.recipeName = recipeName.toUpperCase();
     }
 
     public double getMilkAmount() {
@@ -60,9 +60,9 @@ public class CoffeeRecipe {
     @Override
     public String toString() {
         return recipeName + ":" +
-                "\nMilk Amount=" + milkAmount +
-                "\nWater Amount=" + waterAmount +
-                "\nCoffee Beans Amount=" + coffeeBeansAmount +
+                "\nMilk Amount=" + milkAmount.getTotalResourceAmount() +
+                "\nWater Amount=" + waterAmount.getTotalResourceAmount() +
+                "\nCoffee Beans Amount=" + coffeeBeansAmount.getTotalResourceAmount() +
                 '\n';
     }
 
