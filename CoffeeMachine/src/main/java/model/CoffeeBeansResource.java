@@ -1,6 +1,7 @@
 package model;
 
 public class CoffeeBeansResource extends Resource {
+    //Класс модель ингридиента "Кофейные зёрна"
     public static final String name = "COFFEE_BEANS";
     public CoffeeBeansResource() {
     }

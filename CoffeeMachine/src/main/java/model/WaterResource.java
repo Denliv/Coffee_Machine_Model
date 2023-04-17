@@ -1,6 +1,7 @@
 package model;
 
 public class WaterResource extends Resource {
+    //Класс модель ингридиента "Вода"
     public static final String name = "WATER";
     public WaterResource() {
     }

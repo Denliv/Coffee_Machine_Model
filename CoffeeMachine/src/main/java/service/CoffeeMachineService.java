@@ -30,6 +30,9 @@ public class CoffeeMachineService {
     }
 
     public static void addResources(Resources coffeeMachineResources, Resources newResources) {
+        if (newResources == null) {
+            return;
+        }
         coffeeMachineResources.setTotalMilkAmount(
                 coffeeMachineResources.getTotalMilkAmount() + newResources.getTotalMilkAmount()
         );

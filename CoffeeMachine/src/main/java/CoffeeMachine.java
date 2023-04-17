@@ -5,7 +5,7 @@ import model.CoffeeRecipe;
 import service.CoffeeMachineService;
 
 public class CoffeeMachine implements ICoffeeMachine {
-    //Класс модели "Кофемашина"
+    //Класс модель "Кофемашина"
     private final Resources coffeeMachineResources;
     //Ресурсы кофемашины
     private final Recipes recipesDataBase;
@@ -19,11 +19,12 @@ public class CoffeeMachine implements ICoffeeMachine {
         this.coffeeMachineResources = coffeeMachineResources;
         this.recipesDataBase = new Recipes();
     }
-    //Метод
+    //Геттер для ресурсов кофемашины
     public Resources getCoffeeMachineResources() {
         return coffeeMachineResources;
     }
 
+    //Геттер для рецептов кофемашины
     public Recipes getRecipesDataBase() {
         return recipesDataBase;
     }

@@ -40,7 +40,19 @@ public class CoffeeMachineTest {
 
     @Test
     public void coffeeRecipeOperationsTest() {
-
+        Resources newResources = new Resources(100, 100, 100);
+        coffeeMachine.addCoffeeMachineResources(newResources);
+        CoffeeRecipe latte = new CoffeeRecipe("Latte", 2, 1, 3);
+        CoffeeRecipe cappuccino = new CoffeeRecipe("Cappuccino", 1, 1, 4);
+        CoffeeRecipe americano = new CoffeeRecipe("Americano", 0, 3, 5);
+        coffeeMachine.addCoffeeRecipe(latte);
+        coffeeMachine.addCoffeeRecipe(cappuccino);
+        coffeeMachine.addCoffeeRecipe(americano);
+        assertTrue(coffeeMachine.getRecipesDataBase().contains("Latte"));
+        assertTrue(coffeeMachine.getRecipesDataBase().contains("Cappuccino"));
+        assertTrue(coffeeMachine.getRecipesDataBase().contains("Americano"));
+        coffeeMachine.deleteCoffeeRecipe("Latte");
+        assertFalse(coffeeMachine.getRecipesDataBase().contains("Latte"));
     }
 
     @Test

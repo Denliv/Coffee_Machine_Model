@@ -3,7 +3,9 @@ package model;
 import java.util.Objects;
 
 public abstract class Resource {
+    //Абстрактный класс модель "Ингридиент"
     private double totalResourceAmount;
+    //Количество ресурса
 
     public Resource() {
     }

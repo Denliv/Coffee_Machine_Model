@@ -4,6 +4,7 @@ import model.Coffee;
 import model.CoffeeRecipe;
 
 public interface ICoffeeMachine {
+    //Интерфейс кофемашины
     Resources getCoffeeMachineResources();
 
     Recipes getRecipesDataBase();

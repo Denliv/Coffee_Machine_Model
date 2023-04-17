@@ -3,7 +3,7 @@ package model;
 import java.util.Objects;
 
 public class CoffeeRecipe {
-    //Класс модели "Рецепт Кофе"
+    //Класс модель "Рецепт Кофе"
     private String recipeName;
     private MilkResource milkAmount;
     private WaterResource waterAmount;

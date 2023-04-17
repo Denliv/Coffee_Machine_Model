@@ -7,10 +7,13 @@ import model.WaterResource;
 import java.util.Objects;
 
 public class Resources {
-    //Хранит ресурсы кофемашины
+    //Хранит ресурсы(ингридиенты) кофемашины
     private final MilkResource totalMilkAmount = new MilkResource();
+    //Ингридиент молоко
     private final WaterResource totalWaterAmount = new WaterResource();
+    //Ингридиент вода
     private final CoffeeBeansResource totalCoffeeBeansAmount = new CoffeeBeansResource();
+    //Ингридиент кофейные зёрна
 
     public Resources() {
     }
