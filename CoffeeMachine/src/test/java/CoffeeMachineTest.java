@@ -53,6 +53,10 @@ public class CoffeeMachineTest {
         assertTrue(coffeeMachine.getRecipesDataBase().contains("Americano"));
         coffeeMachine.deleteCoffeeRecipe("Latte");
         assertFalse(coffeeMachine.getRecipesDataBase().contains("Latte"));
+        coffeeMachine.resetRecipesDataBase();
+        assertFalse(coffeeMachine.getRecipesDataBase().contains("Latte"));
+        assertFalse(coffeeMachine.getRecipesDataBase().contains("Cappuccino"));
+        assertFalse(coffeeMachine.getRecipesDataBase().contains("Americano"));
     }
 
     @Test

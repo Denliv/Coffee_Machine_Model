@@ -25,6 +25,6 @@ public class MilkResource extends Resource {
 
     @Override
     public String toString() {
-        return name + "=" + super.getTotalResourceAmount() + "\n";
+        return name + "=" + super.getTotalResourceAmount();
     }
 }
